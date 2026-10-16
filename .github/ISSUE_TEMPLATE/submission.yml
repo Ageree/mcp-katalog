@@ -1,0 +1,24 @@
+name: Добавить MCP-сервер
+description: Предложить MCP-сервер для каталога
+title: "Новый сервер: "
+labels: ["submission"]
+body:
+  - type: input
+    id: repo
+    attributes: {label: Ссылка на репозиторий, placeholder: "https://github.com/…"}
+    validations: {required: true}
+  - type: input
+    id: service
+    attributes: {label: Сервис, placeholder: "Например: Ozon Seller API"}
+    validations: {required: true}
+  - type: input
+    id: install
+    attributes: {label: Команда установки, placeholder: "npx -y …"}
+  - type: textarea
+    id: desc
+    attributes: {label: Описание}
+  - type: checkboxes
+    id: official
+    attributes:
+      label: Статус
+      options: [{label: "Я представляю вендора (официальный сервер)"}]

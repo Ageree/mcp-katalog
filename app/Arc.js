@@ -1,0 +1,1 @@
+export default function Arc({size,style,delay=0}){return <svg className="arc-svg" width={size} height={size} viewBox="0 0 100 100" style={{...style,'--d':delay+'s'}} aria-hidden="true"><circle cx="50" cy="50" r="49.8" pathLength="1" vectorEffect="non-scaling-stroke"/></svg>}
