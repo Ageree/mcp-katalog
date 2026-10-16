@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import Arc from '../Arc';
 import { SUBMIT_GITHUB_REPO, SUBMIT_EMAIL } from '../../lib/config';
 export default function Add(){const [text,setText]=useState('');const [copied,setCopied]=useState(false);
  function onSubmit(e){e.preventDefault();const f=Object.fromEntries(new FormData(e.target));
@@ -9,7 +8,7 @@ export default function Add(){const [text,setText]=useState('');const [copied,se
   if(SUBMIT_GITHUB_REPO){window.open(`https://github.com/${SUBMIT_GITHUB_REPO}/issues/new?labels=submission&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`,'_blank','noopener');setText(body);return}
   if(SUBMIT_EMAIL){window.location.href=`mailto:${SUBMIT_EMAIL}?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;setText(body);return}
   setText(`# ${title}\n\n${body}`)}
- return <><section className="hero"><Arc size={600} style={{right:-300,top:-380}}/><div className="eyebrow">Модерация · 24 часа</div><h1 className="h1" style={{marginTop:12}}>Добавить сервер</h1><p className="lead">Знаете MCP-сервер для российского сервиса? Пришлите его — мы проверим и добавим в каталог.</p></section><div className="stripe-bar"/>
+ return <><section className="hero"><div className="eyebrow">Модерация · 24 часа</div><h1 className="h1" style={{marginTop:12}}>Добавить сервер</h1><p className="lead">Знаете MCP-сервер для российского сервиса? Пришлите его — мы проверим и добавим в каталог.</p></section><div className="stripe-bar"/>
  <div className="pad" style={{paddingTop:48}}>
  <form className="form" onSubmit={onSubmit}>
  <div className="field"><label className="label">Ссылка на репозиторий *</label><input name="repo" className="input" required type="url" placeholder="https://github.com/…"/><span className="hint">GitHub, GitVerse или GitFlic</span></div>
